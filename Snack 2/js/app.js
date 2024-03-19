@@ -13,3 +13,51 @@ Id   Name                    Grades
 196  Luigi Grimaldello 	  68
 102  Piero della Francesca   50
 120  Francesca da Polenta    84 */
+
+//Creo gli oggetti degli studenti
+
+const marcoDellaRovere = {
+  studentId : `213`,
+  studentName : `Marco della Rovere`,
+  studentGrades: `78`
+};
+
+const paolaCortellessa = {
+  studentId : `110`,
+  studentName : `Paola Cortellessa`,
+  studentGrades: `96`
+};
+
+const andreaMantegna = {
+  studentId : `250`,
+  studentName : `Andrea Mantegna`,
+  studentGrades: `48`
+};
+
+const gaiaBorromini = {
+  studentId : `145`,
+  studentName : `Gaia Borromini`,
+  studentGrades: `74`
+};
+
+const luigiGrimaldello = {
+  studentId : `196`,
+  studentName : `Luigi Grimaldello`,
+  studentGrades: `68`
+};
+
+const pieroDellaFrancesca = {
+  studentId : `102`,
+  studentName : `Piero della Francesca`,
+  studentGrades: `50`
+};
+
+const francescaDaPolenta = {
+  studentId : `120`,
+  studentName : `Francesca da Polenta`,
+  studentGrades: `84`
+};
+
+//Creo l'array di studenti
+
+const students = [marcoDellaRovere, paolaCortellessa, andreaMantegna, gaiaBorromini, luigiGrimaldello, pieroDellaFrancesca, francescaDaPolenta];
