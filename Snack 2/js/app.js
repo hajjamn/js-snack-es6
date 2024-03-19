@@ -61,3 +61,9 @@ const francescaDaPolenta = {
 //Creo l'array di studenti
 
 const students = [marcoDellaRovere, paolaCortellessa, andreaMantegna, gaiaBorromini, luigiGrimaldello, pieroDellaFrancesca, francescaDaPolenta];
+
+//Creo la lista con i nomi in maiuscolo
+
+students.forEach((student) => {
+  console.log(student.studentName.toUpperCase())
+})
