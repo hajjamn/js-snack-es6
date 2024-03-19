@@ -69,4 +69,10 @@ const maneskin = {
 //Dichiaro l'array degli invitati
 const tavoloVip = [bradPitt, johnnyDepp, ladyGaga, cristianoRonaldo, georginaRodriguez, chiaraFerragni, fedez, georgeClooney, amalClooney, maneskin];
 
-console.log(tavoloVip)
+//Stampiamo nella console i segnaposto
+tavoloVip.forEach((element, i) => {
+  console.log(`Nome Tavolo: ${element.nomeTavolo}`)
+  console.log(`Nome Ospite: ${element.nomeOspite}`)
+  console.log(`Posto: ${i + 1}`)
+  console.log(`____________________________`)
+});
