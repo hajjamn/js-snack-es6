@@ -66,4 +66,18 @@ const students = [marcoDellaRovere, paolaCortellessa, andreaMantegna, gaiaBorrom
 
 students.forEach((student) => {
   console.log(student.studentName.toUpperCase())
-})
+});
+
+//Creo la lista di tutti gli studenti con voti sopra il 70
+
+console.log(`_____ Students with grades over 70_______`)
+
+const studedntsOver70 = students.filter((student) => student.studentGrades > 70);
+studedntsOver70.forEach((student) => console.log(student.studentName));
+
+//Creo la lista di tutti gli studenti con voti sopra il 70 e id sopra 120
+
+console.log(`_____ Students with grades over 70 and id over 120_______`)
+
+const studedntsOver70AndIdOver120 = students.filter((student) => student.studentGrades > 70 && student.studentId > 120);
+studedntsOver70AndIdOver120.forEach((student) => console.log(student.studentName));
