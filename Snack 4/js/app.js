@@ -11,18 +11,34 @@ const winScore = 3;
 
   //Scrivo una funzione che mi dia il punteggio che si ottiene vincendo le partite cogtro ogni avversario sia in andata che in ritorno
 function generateRandomScore() {
-  let max = (teams.number - 1) * winScore * 2;
+  let max = (teamsNames.length - 1) * winScore * 2;
   let min = 0;
   return parseInt(Math.random() * (max - min) + min)
 }
 
   //Assumiamo che il numero di falli massimo ottenibile sia 15 a partita e generiamo il numero
 function generateRandomFouls() {
-  let max = (teams.number - 1) * 15;
+  let max = (teamsNames.length - 1) * 15;
   let min = 0;
   return parseInt(Math.random() * (max - min) + min)
 }
 
 //Genero un array di stringhe con i nomi delle squadre che voglio generare
 const teamsNames = ['Inter', 'Milan', 'Juventus', 'Bologna', 'Roma', 'Atalanta', 'Napoli', 'Fiorentina', 'Lazio', 'Monza', 'Torino', 'Genoa', 'Lecce', 'Udinese', 'Verona', 'Cagliari', 'Empoli', 'Frosinone', 'Sassuolo', 'Salernitana']
-console.log(teamsNames)
+
+//Creo l'array vuoto da popolare
+let teams = [];
+
+//Ciclo l'array per generare oggetti e pusharli in un array
+//Accedo ad un elemento dell'array
+teamsNames.forEach( (currentElement) => {
+  //Creo un oggetto che abbia come nome dell'oggetto la stringa dell'array e come valore della proprieta' name quella stessa stringa, poi genero gli altri valori con le funzioni
+  const teamObject = {
+    name: currentElement,
+    score: generateRandomScore(),
+    fouls: generateRandomFouls()
+    }
+    //Pusho l'oggetto creato nell'array di oggetti
+  teams.push(teamObject);
+});
+console.log(teams)
