@@ -16,7 +16,7 @@ esempio:
 
 //Creo gli oggetti per gli invitati
 
-const bradPitt = {
+/* const bradPitt = {
   nomeTavolo : `Tavolo VIP`,
   nomeOspite : `Brad Pitt`
 }
@@ -75,4 +75,14 @@ tavoloVip.forEach((element, i) => {
   console.log(`Nome Ospite: ${element.nomeOspite}`)
   console.log(`Posto: ${i + 1}`)
   console.log(`____________________________`)
+}); */
+
+const guests = [ 'Brad Pitt', 'Johnny Depp', 'Lady Gaga', 'Cristiano Ronaldo', 'Georgina Rodriguez', 'Chiara Ferragni', 'Fedez', 'George Clooney', 'Amal Clooney', 'Maneskin'];
+
+const vipTableSeating = guests.map((el, i) => el = {
+  nomeTavolo: `Tavolo VIP`,
+  nomeOspite: el,
+  posto: i+1
 });
+
+console.log(vipTableSeating)
