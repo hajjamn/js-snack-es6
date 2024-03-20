@@ -64,9 +64,11 @@ const students = [marcoDellaRovere, paolaCortellessa, andreaMantegna, gaiaBorrom
 
 //Creo la lista con i nomi in maiuscolo
 
-students.forEach((student) => {
+/* students.forEach((student) => {
   console.log(student.studentName.toUpperCase())
-});
+}); */
+
+students.map((el, i) => el.studentName = el.studentName.toUpperCase());
 
 //Creo la lista di tutti gli studenti con voti sopra il 70
 
