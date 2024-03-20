@@ -69,3 +69,46 @@ teams.forEach( (currentElement) => {
   teamsOnlyNamesAndFouls.push(currentElementOnlyNamesAndFouls);
 });
 console.log(teamsOnlyNamesAndFouls)
+
+//Stampare in pagina oltre che in console
+//Dichiaro il container dove inserire il contenuto generato
+const containerDomElement = document.querySelector(`.container`);
+
+//Genero la tabella dove inserire le varie righe
+const tableElement = document.createElement(`table`);
+tableElement.className = `table table-striped text-center w-auto mx-auto mt-5`
+
+//Genero la riga degli header e la appendo alla tabella generata prima
+const tableHeader = document.createElement('thead');
+tableHeader.innerHTML = `
+  <tr>
+    <th scope="col" class="px-3">Posizione</th>
+    <th scope="col" class="px-3">Squadra</th>
+    <th scope="col" class="px-3">Punti</th>
+    <th scope="col" class="px-3">Falli</th>
+  </tr>
+`;
+tableElement.append(tableHeader);
+
+//Metto in ordine l'array per punteggio
+teams.sort( (a, b) => b.score - a.score);
+
+//Creo l'elemento tbody
+const tableBody = document.createElement('tbody')
+
+//Ciclo l'array di oggetti e riempio la tabella
+teams.forEach( (currentElement, i) => {
+  const currentElementRow = document.createElement(`tr`);
+  currentElementRow.innerHTML = `
+    <th scope="row">${i +1}</td>
+    <td>${currentElement.name}</td>
+    <td>${currentElement.score}</td>
+    <td>${currentElement.fouls}</td>
+  `;
+  tableBody.append(currentElementRow);
+});
+
+tableElement.append(tableBody);
+
+//Appendo la tabella al container
+containerDomElement.append(tableElement)
