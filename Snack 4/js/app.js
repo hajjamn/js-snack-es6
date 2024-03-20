@@ -35,10 +35,37 @@ teamsNames.forEach( (currentElement) => {
   //Creo un oggetto che abbia come nome dell'oggetto la stringa dell'array e come valore della proprieta' name quella stessa stringa, poi genero gli altri valori con le funzioni
   const teamObject = {
     name: currentElement,
-    score: generateRandomScore(),
-    fouls: generateRandomFouls()
+    score: 0,
+    fouls: 0
     }
     //Pusho l'oggetto creato nell'array di oggetti
   teams.push(teamObject);
 });
+console.log(teams) //Non capisco come mai non mi dia questo console log a meno che io commenti il secondo
+
+//Ciclo il nuovo array per generare casualmente i punteggi
+
+teams.forEach( (currentElement) => {
+  currentElement.score = generateRandomScore();
+  currentElement.fouls = generateRandomFouls();
+})
 console.log(teams)
+
+/* for (let i = 0; i < teams.length; i++) {
+  teams[i].score = generateRandomScore();
+  teams[i].fouls = generateRandomFouls();
+}
+console.log(teams) */ //Non funziona nemmeno questo
+
+//Creo un array con solo le due proprieta' ciclando il precedente
+let teamsOnlyNamesAndFouls = [];
+
+teams.forEach( (currentElement) => {
+  const {name, fouls} = currentElement;
+  const currentElementOnlyNamesAndFouls = {
+    name,
+    fouls
+  }
+  teamsOnlyNamesAndFouls.push(currentElementOnlyNamesAndFouls);
+});
+console.log(teamsOnlyNamesAndFouls)
